@@ -1,0 +1,19 @@
+---
+import Layout from "../layouts/Layout.astro";
+import App from '../components/App.jsx';
+import { ViewTransitions } from "astro:transitions";
+import Carrousel_Aplicaciones from '../components/Carrousel_Aplicaciones.astro';
+import Carousel_Apli from "../components/Carrousel_Apli.jsx";
+---
+
+<Layout title="Welcome to Astro.">
+  <h1>HELLO WORLD!</h1>
+  <Carousel_Apli/>
+  <ViewTransitions/>
+</Layout>
+
+<style>
+  h1 {
+    color: var(--black);
+  }
+</style>

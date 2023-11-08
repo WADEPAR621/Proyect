@@ -1,0 +1,179 @@
+import React, { useEffect, useState } from 'react';
+
+
+const Carousel_Apli = () => {
+function App() {}
+
+    window.onload= function(event){
+        var app =new App();
+        window.app = app;
+    }
+
+    App.prototype.processingButton = function(event){
+
+        const btn = event.currentTarget;
+        const carouselList = event.currentTarget.parentNode;
+        const track = event.currentTarget.parentNode.querySelector('#track');
+        const carousel = track.querySelectorAll('.carrusel');
+
+        const carouselWidth = carousel[0].offsetWidth;
+
+        const trackWidth = track.offsetWidth;
+        const listWidth = carouselList.offsetWidth;
+
+        track.style.left == "" ? leftPosition = track.style.left = 0 : leftPosition = parseFloat(track.style.left.slice(0,-2)*-1);
+        btn.dataset.button == 'button-prev' ? prevAction(leftPosition, carouselwidth, track) : nextAction(leftPosition, trackWidth, listWidth, carouselWidth, track);
+    }
+
+    let prevAction = (leftPosition, carouselWidth, track) => {
+        if (leftPosition > 0){
+            track.style.left = `${-1* (leftPosition - carouselWidth)}px`
+        }
+    }
+
+    let nextAction = (leftPosition, trackWidth, listWidth, carouselWidth, track) => {
+        if (leftPosition < (trackWidth - listWidth)){
+            track.style.left = `${-1* (leftPosition - carouselWidth)}px`
+        }
+    }
+
+    return (
+        <div class="max-w-52 m-0">
+            <h2 class="">Nuestros sistemas y Aplicaciones</h2>
+
+            <div class="flex relative items-center h-72 p-10 mx-auto max-w-screen-2xl overflow-hidden mr-8 ml-8 border rounded-lg" >F
+                <button
+                    class="rounded-full bg-white absolute z-40 w-12 h-12 text-center border-0 cursor-pointer focus:outline-none left-0"
+                    id="button-prev"
+                    data-button="button-prev"
+                    onClick={(event) => prevAction(event)}
+                >
+                    <svg
+                        class="w-3 h-full text-black"
+                        aria-hidden="true"
+                        focusable="false"
+                        data-prefix="fas"
+                        data-icon="chevron-left"
+                        className="svg-inline--fa fa-chevron-left fa-w-10"
+                        role="img"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 320 512"
+                    >
+                        <path
+                            fill="currentColor"
+                            d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"
+                        ></path>
+                    </svg>
+                </button>
+
+
+
+                <div id="track" class="relative flex justify-center transition-transform duration-300 ease-in-out" >
+
+
+
+                    <div class="border border-gray-5 shadow-sm transition duration-300 ease-in-out hover:shadow-md rounded-lg h-64 w-64 mr-4 ml-4">
+                        <div>
+                            <a href="/" class="flex flex-col items-center justify-center">
+                                <img class="w-44 hover:opacity-100 left-0" src="Carousel-imgs/nuevo-mensaje.png" alt="mensaje" />
+                                <img class="w-56 hidden" src="/Carousel-imgs/nuevo-mensaje.gif" />
+                                <h4 class="">Correo</h4>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="border border-gray-5 shadow-sm transition duration-300 ease-in-out hover:shadow-md rounded-lg h-64 w-64 mr-4 ml-4">
+                        <div>
+                            <a href="/" class="flex flex-col items-center justify-center">
+                                <picture>
+                                    <img class="w-44 transition-opacity duration-0 ease-in-out opacity-100 hover:opacity-0" src="Carousel-imgs/graduado.png" />
+                                    <img class="w-56 hover:opacity-100 opacity-0 transition-opacity duration-0 ease-in-out absolute inset-0" src="/Carousel-imgs/graduado.gif" />
+                                </picture>
+                                <h4 class="font-4">Seg. a Graduados</h4>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="border border-gray-5 shadow-sm transition duration-300 ease-in-out hover:shadow-md rounded-lg h-64 w-64 mr-4 ml-4">
+                        <div>
+                            <a href="/" class="flex flex-col items-center justify-center">
+                                <picture><img class="w-44" src="/Carousel-imgs/php.gif" /></picture>
+                                <h4 class="">Sistema Integrado</h4>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="border border-gray-5 shadow-sm transition duration-300 ease-in-out hover:shadow-md rounded-lg h-64 w-64 mr-4 ml-4">
+                        <div>
+                            <a href="/" class="flex flex-col items-center justify-center">
+                                <picture><img class="w-44" src="/Carousel-imgs/laboratorio-virtual.gif" /></picture>
+                                <h4 class="">DEADV UTA</h4>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="border border-gray-5 shadow-sm transition duration-300 ease-in-out hover:shadow-md rounded-lg h-64 w-64 mr-4 ml-4">
+                        <div>
+                            <a href="/" class="flex flex-col items-center justify-center">
+                                <picture><img class="w-44" src="/Carousel-imgs/calendario.gif" /></picture>
+                                <h4 class="">Calendario</h4>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="border border-gray-5 shadow-sm transition duration-300 ease-in-out hover:shadow-md rounded-lg h-64 w-64 mr-4 ml-4">
+                        <div>
+                            <a href="/" class="flex flex-col items-center justify-center">
+                                <picture><img class="w-44" src="/Carousel-imgs/autobus.gif" /></picture>
+                                <h4 class="">Buses</h4>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="border border-gray-5 shadow-sm transition duration-300 ease-in-out hover:shadow-md rounded-lg h-64 w-64 mr-4 ml-4">
+                        <div>
+                            <a href="/" class="flex flex-col items-center justify-center">
+                                <picture><img class="w-44" src="/Carousel-imgs/revista.gif" /></picture>
+                                <h4 class="">Noticias</h4>
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+                {/* FLECHA DE DESPLIEGUE HACIA LA IZQUIERDA */}
+                <button
+                    class="rounded-full bg-white absolute z-40 w-12 h-12 text-center border-1 cursor-pointer focus:outline-none right-0"
+                    id="button-next"
+                    data-button="button-next"
+                    onClick={(event) => nextAction(event)}
+                >
+                    <svg
+                        class="w-3 h-full text-black"
+                        aria-hidden="true"
+                        focusable="false"
+                        data-prefix="fas"
+                        data-icon="chevron-right"
+                        className="svg-inline--fa fa-chevron-right fa-w-10"
+                        role="img"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 320 512">
+                        <path
+                            fill="currentColor"
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c-9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    );
+}
+export default Carousel_Apli;
